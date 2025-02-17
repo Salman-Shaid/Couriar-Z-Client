@@ -2,7 +2,7 @@ import PropTypes from 'prop-types'
 import useRole from '../hooks/useRole'
 import LoadingSpinner from '../components/Shared/LoadingSpinner'
 import { Navigate } from 'react-router-dom'
-
+ 
 const DeliveryManRoute = ({ children }) => {
   const [role, isLoading] = useRole()
 
