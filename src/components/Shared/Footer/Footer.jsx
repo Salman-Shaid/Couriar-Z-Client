@@ -1,8 +1,9 @@
 import Container from "../Container"
 
+
 const Footer = () => {
   return (
-    <div className="bg-red-950 mx-auto text-base-content p-10">
+    <div className="bg-red-950 dark:bg-gray-900 mx-auto text-base-content p-10 shadow-sm transition-colors duration-300">
       <Container>
       <footer className="footer  grid sm:grid-cols-1 md:grid-cols-4">
         <nav>
