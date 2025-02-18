@@ -3,10 +3,11 @@ import bannerBg from "../../../assets/images/Delivery Express Presentation.jpg";
 const Banner = () => {
     return (
         <div
-            className="bg-cover bg-center h-screen" 
+            className="bg-cover bg-center h-[1200px]" 
             style={{ backgroundImage: `url(${bannerBg})` }}
         >
-            <div className="flex flex-col items-center justify-center h-full text-center text-white px-4 bg-black bg-opacity-50">
+            <div className="flex flex-col items-center justify-center h-full text-center text-white px-4 bg-gray-950 bg-opacity-40 
+            dark:bg-opacity-85  dark:text-white">
                 <h1 className="text-3xl sm:text-5xl lg:text-8xl font-bold leading-tight">
                     Welcome to Courier-Z
                 </h1>

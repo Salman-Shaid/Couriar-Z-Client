@@ -27,6 +27,7 @@ import MyReviews from '../pages/Dashboard/deliveryman/MyReviews'
 import ParcelLocationPage from '../pages/Dashboard/deliveryman/ParcelLocationPage'
 import UpdateParcelForm from '../components/Form/UpdateParcelForm'
 import PayParcel from '../pages/Dashboard/Customer/PayParcel'
+import AboutUs from '../pages/About/AboutUs'
 
 
 export const router = createBrowserRouter([
@@ -38,6 +39,10 @@ export const router = createBrowserRouter([
       {
         path: '/',
         element: <Home />,
+      },
+      {
+        path: '/about',
+        element: <AboutUs></AboutUs>
       },
       
 

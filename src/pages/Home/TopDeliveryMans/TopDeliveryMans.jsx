@@ -33,23 +33,25 @@ const TopDeliveryMans = () => {
     }
 
     return (
-        <div className="container mx-auto px-4 py-36 ">
+
+        <div className='dark:bg-gray-900 dark:text-white'>
+            <div className="container mx-auto px-4 py-36 ">
             <h2 className="text-5xl font-bold text-center mb-8">Our Top Delivery Men</h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                 {deliveryMen.map((deliveryMan) => (
                     <motion.div
                         key={deliveryMan._id}
-                        className="card bg-white py-20 shadow-2xl rounded-lg p-6 border"
+                        className="card dark:bg-gray-800 py-20 shadow-2xl rounded-lg p-6 border"
                         initial={{ opacity: 0, y: 50 }} 
                         animate={{ opacity: 1, y: 0 }}   
                         transition={{ duration: 2 }}    
                     >
-                        <div className="avatar flex justify-center mb-4">
+                        <div className=" avatar flex justify-center mb-4">
                             <div className="w-2/4 rounded-full">
                                 <img src={deliveryMan.image || '/default-avatar.png'} alt={deliveryMan.name} />
                             </div>
                         </div>
-                        <div className="text-center">
+                        <div className="text-center ">
                             <h3 className="text-3xl mb-2 font-semibold">{deliveryMan.name}</h3>
                             <p className="text-gray-600">Email: {deliveryMan.email}</p>
                             
@@ -62,6 +64,8 @@ const TopDeliveryMans = () => {
                 ))}
             </div>
         </div>
+        </div>
+        
     );
 };
 
