@@ -30,7 +30,7 @@ const ContactPage = () => {
         </h2>
 
         <div className="grid md:grid-cols-2 gap-8">
-          {/* Contact Info Section */}
+         
           <div>
             <h3 className="text-xl font-semibold text-gray-800 dark:text-gray-300 mb-4">Get in Touch</h3>
             <p className="text-gray-600 dark:text-gray-400 mb-4">

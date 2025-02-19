@@ -84,7 +84,7 @@ const AboutUs = () => {
 
                 {/* Our Mission Section */}
                 <div className="mt-16 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-                    {/* Lottie Animation */}
+               
                     <div className="flex justify-center">
                         <Lottie animationData={deliveryAnimation2} className="w-80 h-80 md:w-96 md:h-96" />
                     </div>

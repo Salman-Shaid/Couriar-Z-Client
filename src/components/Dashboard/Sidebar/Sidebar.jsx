@@ -10,16 +10,15 @@ import { Link } from 'react-router-dom'
 import SellerMenu from './Menu/SellerMenu'
 import CustomerMenu from './Menu/CustomerMenu'
 import useRole from '../../../hooks/useRole'
-import LoadingSpinner from '../../Shared/LoadingSpinner'
+
 
 const Sidebar = () => {
   const { logOut } = useAuth()
   const [isActive, setActive] = useState(false)
-  const [role, isLoading] = useRole()
+  const [role ] = useRole()
   const { user } = useAuth();
 
 
-  // Sidebar Responsive Handler
   const handleToggle = () => {
     setActive(!isActive)
   }
