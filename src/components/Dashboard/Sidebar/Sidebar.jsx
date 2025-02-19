@@ -23,7 +23,7 @@ const Sidebar = () => {
   const handleToggle = () => {
     setActive(!isActive)
   }
-  if (isLoading) return <LoadingSpinner></LoadingSpinner>
+  
 
   return (
     <>
