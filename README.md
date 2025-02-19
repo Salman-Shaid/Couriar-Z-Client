@@ -1,37 +1,32 @@
-# Parcel Management System: Courier-Z
+**# Parcel Management System - Client Side**
 
-## 🚀 Live Site:
-- **[Courier-Z Live](https://assignment12-fe277.web.app/)**
+## Live Site URL
+[Live Website]([https://your-live-site-link.com](https://assignment12-fe277.web.app/))
 
-A Full Stack Parcel Management System built using the **MERN stack** (MongoDB, Express, React, Node.js). This platform allows users to book parcels, DeliveryMen to deliver parcels, and Admins to manage the entire process, including assigning DeliveryMen to parcels and tracking deliveries. The system includes various roles, such as **Users**, **DeliveryMen**, and **Admins**, each with unique permissions and functionalities.
+## Overview
+The Parcel Management System is a MERN stack application where users can book parcels for delivery, admins can assign delivery personnel, and delivery men can manage deliveries. This repository contains the frontend (React.js) implementation.
 
-## 📋 Features
+## Features
+- Responsive design for mobile, tablet, and desktop
+- User authentication (email/password & Google login)
+- Role-based access (User, Admin, Delivery Man)
+- Parcel booking system with real-time status updates
+- Admin dashboard for managing parcels and users
+- Delivery personnel dashboard with assigned deliveries
+- Real-time notifications and alerts (SweetAlert/Toast)
+- Secure API calls with JWT authentication
+- Stripe payment integration for parcel bookings
+- Interactive charts for statistics (React Apex Charts)
+- Light/Dark mode toggle
 
-- **User Registration & Login**: Secure sign-up and login with role-based permissions.
-- **Role-Based Access Control**: Users, DeliveryMen, and Admins have unique dashboards and permissions.
-- **Parcel Booking**: Users can book parcels with full details, including delivery dates and addresses.
-- **Parcel Tracking**: Track the status of each parcel in real-time (e.g., pending, on the way, delivered).
-- **Admin Dashboard**: Admins can manage all bookings, assign DeliveryMen, and track deliveries.
-- **Delivery Management**: DeliveryMen can view assigned parcels and update their delivery status.
-- **ETC**: Additional features like real-time notifications, parcel history, and analytics (e.g., delivery stats).
+## Tech Stack
+- React.js (Frontend)
+- Tailwind CSS (Styling)
+- React Router (Navigation)
+- Firebase Authentication
+- TanStack Query (Data Fetching)
+- ShadCN UI (Component Library)
+- React Hook Form (Form Handling)
+- React Leaflet (Map Integration)
+- Stripe API (Payment Processing)
 
-## 🛠 Technologies Used
-
-- **Frontend**: React, React Router, TanStack Query, React ApexCharts, Shadcn Component Library
-- **Backend**: Node.js, Express, JWT Authentication
-- **Database**: MongoDB
-- **CSS Framework**: Custom, responsive design with animations
-- **Deployment**: Frontend hosted on Firebase
-- **ETC**: Additional libraries for notifications, form validation, and user experience improvements.
-
-## 🧑‍💻 ScreenShoots
-<div align="center">
-  <img  src="https://github.com/Salman-Shaid/Courier-Z/blob/main/client/src/assets/Screenshot%202025-02-05%20174436.png"  />
-  <img  src="https://github.com/Salman-Shaid/Courier-Z/blob/main/client/src/assets/Screenshot%202025-02-05%20174504.png"  />
-  <img  src="https://github.com/Salman-Shaid/Courier-Z/blob/main/client/src/assets/Screenshot%202025-02-05%20174517.png"  />
-</div>
-## 🧑‍💻 Setup & Installation
-
-1. **Clone the repository**:
-   ```bash
-   git clone https://github.com/your-username/parcel-management-system.git
