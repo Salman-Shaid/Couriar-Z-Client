@@ -25,20 +25,20 @@ const UserDataRow = ({ userData, refetch }) => {
   }
 
   return (
-    <tr>
-      <td className='px-5 py-5 border-b border-gray-200 bg-white text-sm'>
-        <p className='text-gray-900 whitespace-no-wrap'>{name}</p>
+    <tr className='text-white'>
+      <td className='px-5 py-5 border-b dark:bg-gray-500 dark:text-white text-white text-sm'>
+        <p className='text-gray-900 dark:text-white whitespace-no-wrap'>{name}</p>
       </td>
-      <td className='px-4 py-5 border-b border-gray-200 bg-white text-sm'>
-        <p className='text-gray-900 whitespace-no-wrap'>{email}</p>
+      <td className='px-4 py-5 border-b border-gray-200 dark:bg-gray-500 dark:text-white text-white text-sm'>
+        <p className='text-gray-900 dark:text-white  whitespace-no-wrap'>{email}</p>
       </td>
-      <td className='px-4 py-5 border-b border-gray-200 bg-white text-sm'>
-        <p className='text-gray-900 whitespace-no-wrap'>{phone ? phone : 'Not available'}</p>
+      <td className='px-4 py-5 border-b border-gray-200 dark:bg-gray-500 dark:text-white bg-white text-sm'>
+        <p className='text-gray-900 dark:text-white whitespace-no-wrap'>{phone ? phone : 'Not available'}</p>
       </td>
-      <td className='px-4 py-5 border-b border-gray-200 bg-white text-sm'>
-        <p className='text-gray-900 whitespace-no-wrap'>{role}</p>
+      <td className='px-4 py-5 border-b border-gray-200 dark:bg-gray-500 dark:text-white bg-white text-sm'>
+        <p className='text-gray-900 dark:text-white  whitespace-no-wrap'>{role}</p>
       </td>
-      <td className='px-5 py-5 border-b border-gray-200 bg-white text-sm'>
+      <td className='px-5 py-5 border-b border-gray-200 dark:bg-gray-500 dark:text-white bg-white text-sm'>
         {status ? (
           <p
             className={`${status === 'requested' ? 'text-blue-800' : 'text-green-500'
@@ -51,7 +51,7 @@ const UserDataRow = ({ userData, refetch }) => {
         )}
       </td>
 
-      <td className='px-5 py-5 border-b border-gray-200 bg-white text-sm'>
+      <td className='px-5 py-5 border-b dark:bg-gray-500 dark:text-white border-gray-200 bg-white text-sm'>
         <span
           onClick={() => setIsOpen(true)}
           className='relative cursor-pointer inline-block px-3 py-1 font-semibold text-green-900 leading-tight'

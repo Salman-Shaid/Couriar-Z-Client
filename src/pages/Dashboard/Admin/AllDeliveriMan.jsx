@@ -50,14 +50,14 @@ const AllDeliveryMan = () => {
   if (isLoading) return <LoadingSpinner />;
 
   return (
-    <div className="container mx-auto px-4 sm:px-8">
-      <h1 className="text-3xl font-bold py-8 text-center text-indigo-600 bg-red-200">
+    <div className="container mx-auto px-4 sm:px-8 dark:bg-gray-900 dark:text-white">
+      <h1 className="text-3xl font-bold py-8 text-center text-white bg-gray-700 rounded-t-xl">
         All Delivery Men ( {deliveryMen.length} )
       </h1>
       <div className="overflow-x-auto">
         <div className="min-w-full shadow-lg rounded-lg border border-gray-200">
           <table className="min-w-full bg-white text-gray-700">
-            <thead className="bg-indigo-600 text-white">
+            <thead className="bg-blue-900 text-white">
               <tr>
                 <th className="px-5 py-3 text-left text-sm font-semibold uppercase">Name</th>
                 <th className="px-4 py-3 text-left text-sm font-semibold uppercase">Email</th>
@@ -69,20 +69,20 @@ const AllDeliveryMan = () => {
             <tbody>
               {currentDeliveryMen.map((deliveryMan) => (
                 <tr key={deliveryMan._id}>
-                  <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-                    <p className="text-gray-900 whitespace-no-wrap">{deliveryMan.name}</p>
+                  <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm dark:bg-gray-600 ">
+                    <p className="text-gray-900 dark:text-white whitespace-no-wrap">{deliveryMan.name}</p>
                   </td>
-                  <td className="px-4 py-5 border-b border-gray-200 bg-white text-sm">
-                    <p className="text-gray-900 whitespace-no-wrap">{deliveryMan.email}</p>
+                  <td className="px-4 py-5 border-b dark:bg-gray-600 border-gray-200 bg-white text-sm">
+                    <p className="text-gray-900 dark:text-white whitespace-no-wrap">{deliveryMan.email}</p>
                   </td>
-                  <td className="px-4 py-5 border-b border-gray-200 bg-white text-sm">
-                  <p className="text-gray-900 whitespace-no-wrap">{deliveryMan.phone|| 'Not Available'}</p>
+                  <td className="px-4 py-5 dark:bg-gray-600 border-b border-gray-200 bg-white text-sm">
+                  <p className="text-gray-900 dark:text-white whitespace-no-wrap">{deliveryMan.phone|| 'Not Available'}</p>
                   </td>
-                  <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-                    <p className="text-gray-900 whitespace-no-wrap">{deliveryMan.averageRating || 'N/A'}</p>
+                  <td className="px-5 dark:bg-gray-600 py-5 border-b border-gray-200 bg-white text-sm">
+                    <p className="text-gray-900 dark:text-white whitespace-no-wrap">{deliveryMan.averageRating || 'N/A'}</p>
                   </td>
-                  <td className="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-                    <p className="text-gray-900 whitespace-no-wrap">{deliveryMan.totalReviews || 0}</p>
+                  <td className="px-5 dark:bg-gray-600 py-5 border-b border-gray-200 bg-white text-sm">
+                    <p className="text-gray-900 dark:text-white whitespace-no-wrap">{deliveryMan.totalReviews || 0}</p>
                   </td>
                 </tr>
               ))}
@@ -99,7 +99,7 @@ const AllDeliveryMan = () => {
             disabled={currentPage === 1}
             className={`pr-2 rounded-lg flex items-center border text-sm font-medium ${currentPage === 1
                 ? 'bg-gray-300 text-gray-500 cursor-not-allowed'
-                : 'bg-white text-indigo-600 border-gray-300 hover:bg-gray-100'
+                : 'bg-white text-yellow-400 border-gray-300 hover:bg-gray-100'
               }`}
           >
             <PiArrowSquareLeftFill size={40} /> Previous
@@ -111,8 +111,8 @@ const AllDeliveryMan = () => {
               key={index + 1}
               onClick={() => handlePageChange(index + 1)}
               className={`px-5 py-2 mx-2 rounded-full border text-sm font-medium ${currentPage === index + 1
-                  ? 'bg-indigo-600 text-white'
-                  : 'bg-white text-indigo-600 border-gray-300 hover:bg-gray-100'
+                  ? 'bg-yellow-400 text-white'
+                  : 'bg-white text-yellow-400 border-gray-300 hover:bg-gray-100'
                 }`}
             >
               {index + 1}
@@ -125,7 +125,7 @@ const AllDeliveryMan = () => {
             disabled={currentPage === totalPages}
             className={`pl-2 rounded-lg  flex items-center border text-sm font-medium ${currentPage === totalPages
                 ? 'bg-gray-300 text-gray-500 cursor-not-allowed'
-                : 'bg-white text-indigo-600 border-gray-300 hover:bg-gray-100'
+                : 'bg-white text-yellow-400 border-gray-300 hover:bg-gray-100'
               }`}
           >
             <span className="px-2">Next</span> <PiArrowSquareRightFill size={40} />

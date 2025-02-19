@@ -164,7 +164,7 @@ const MyParcels = () => {
             <Helmet>
                 <title>My Parcels</title>
             </Helmet>
-            <div className="container mx-auto px-4 sm:px-8">
+            <div className="container mx-auto px-4 sm:px-8 dark:bg-gray-900 dark:text-white">
                 
                 {user && (
                     <div className="py-4 flex items-center space-x-4">
@@ -180,7 +180,7 @@ const MyParcels = () => {
                     </div>
                 )}
 
-                <div className="py-8">
+                <div className="py-8 dark:bg-gray-900 dark:text-white">
                     <div className="-mx-4 sm:-mx-8 px-4 sm:px-8 py-4 overflow-x-auto">
                         <div className="inline-block min-w-full shadow rounded-lg overflow-hidden">
                             <table className="min-w-full leading-normal">

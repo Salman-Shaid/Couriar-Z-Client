@@ -146,7 +146,7 @@ const BookParcelForm = () => {
   };
 
   return (
-    <div className="flex justify-center items-center min-h-screen bg-base-200 p-4">
+    <div className="flex justify-center items-center min-h-screen bg-base-200 p-4 dark:bg-gray-900 dark:text-white">
       <div className="card w-full max-w-4xl bg-base-100 shadow-xl">
         <div className="card-body">
           <h2 className="card-title text-center">Book Your Parcel</h2>

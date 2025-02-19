@@ -1,4 +1,4 @@
-import bannerBg from "../../../assets/images/Delivery Express Presentation.jpg";
+import bannerBg from "../../../assets/images/banner.png";
 
 const Banner = () => {
     return (
@@ -19,9 +19,9 @@ const Banner = () => {
                     <input
                         type="text"
                         placeholder="Enter tracking number or destination"
-                        className="input input-bordered w-full md:flex-grow py-3 px-4 rounded-md border-2 border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary"
+                        className="input input-bordered w-full md:flex-grow py-3 px-4 rounded-md bg-blue-900 border-2 border-yellow-400 focus:outline-none focus:ring-2 focus:ring-primary"
                     />
-                    <button className="btn btn-primary w-full md:w-auto py-3 px-6 font-semibold rounded-md">
+                    <button className="btn btn-primary bg-yellow-500 hover:bg-yellow-600 text-white w-full md:w-auto py-3 px-6 font-semibold rounded-md">
                         Track Now
                     </button>
                 </div>

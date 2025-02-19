@@ -45,15 +45,15 @@ const MyReviews = () => {
 
     return (
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-8">
-            <h2 className="text-3xl font-bold mb-8 text-center text-gray-800">My Reviews</h2>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            <h2 className="text-5xl font-bold mb-8 text-center text-gray-800 dark:text-white my-10">My Reviews</h2>
+            <div className="grid grid-cols-1 mt-20 sm:grid-cols-2 lg:grid-cols-3 gap-8">
                 {reviews.length > 0 ? (
                     reviews.map((review) => {
                         const rating = parseInt(review.rating) || 0;
                         return (
                             <div
                                 key={review._id}
-                                className="bg-white shadow-lg rounded-lg p-6 hover:shadow-xl transition-shadow duration-300 flex flex-col justify-between"
+                                className="bg-white dark:bg-gray-700 dark:text-white shadow-lg rounded-lg p-6 hover:shadow-xl transition-shadow duration-300 flex flex-col justify-between"
                             >
                                 <div className="flex items-center space-x-4 mb-4">
                                     <img
@@ -62,7 +62,7 @@ const MyReviews = () => {
                                         className="w-16 h-16 rounded-full border-2 border-gray-300 object-cover"
                                     />
                                     <div>
-                                        <h3 className="text-xl font-semibold text-gray-800">{review.userName || 'Anonymous'}</h3>
+                                        <h3 className="text-xl font-semibold \">{review.userName || 'Anonymous'}</h3>
                                         <p className="text-sm text-gray-500">{review.userEmail}</p>
                                         <p className="text-xs text-gray-400">{new Date(review.createdAt).toLocaleDateString()}</p>
                                     </div>
@@ -73,7 +73,7 @@ const MyReviews = () => {
                                         {'☆'.repeat(5 - rating)}
                                     </span>
                                 </div>
-                                <p className="text-gray-700">{review.reviewText}</p>
+                                <p className=" text-gray-700 dark:text-gray-100">{review.reviewText}</p>
                             </div>
                         );
                     })

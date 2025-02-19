@@ -1,11 +1,11 @@
 import Container from '../Container';
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import useAuth from '../../../hooks/useAuth';
 import avatarImg from '../../../assets/images/placeholder.jpg';
 import logo from '../../../assets/images/logo.png';
 import Lottie from 'lottie-react';
-import notificationAnimation from '../../../assets/lottie/notifation bell.json';
+// import notificationAnimation from '../../../assets/lottie/notifation bell.json';
 import menuAnimation from '../../../assets/lottie/menu.json';
 import useTheme from '../../../hooks/useTheme';
 import { Moon, Sun } from 'lucide-react'; // Import Icons
@@ -14,9 +14,10 @@ const Navbar = () => {
   const { user, logOut } = useAuth();
   const [isOpen, setIsOpen] = useState(false);
   const { theme, toggleTheme } = useTheme();
+  const location = useLocation();
 
   return (
-    <div className="fixed w-full bg-red-950 dark:bg-gray-900 z-10 shadow-sm transition-colors duration-300">
+    <div className="fixed w-full bg-blue-900 dark:bg-gray-900 z-10 shadow-sm transition-colors duration-300">
       <div className="border-b-[1px] border-gray-500">
         <Container>
           <div className="flex flex-row items-center justify-between gap-3 md:gap-0">
@@ -28,20 +29,69 @@ const Navbar = () => {
             </div>
 
 
+
             {/* Center Navigation */}
             <div className="hidden md:flex gap-6">
-              <Link to="/" className="text-white hover:text-gray-300 transition font-semibold">
+              <Link
+                to="/"
+                className={`font-semibold transition pb-2 ${location.pathname === "/"
+                  ? "text-yellow-400 border-b-2 border-yellow-400"
+                  : "text-white hover:text-gray-300"
+                  }`}
+              >
                 Home
               </Link>
 
-              <Link to="/" className="bg-white rounded-full p-1 hover:bg-gray-200 transition">
-                <Lottie animationData={notificationAnimation} loop={true} />
+              <Link
+                to="/services"
+                className={`font-semibold transition pb-2 ${location.pathname === "/services"
+                  ? "text-yellow-400 border-b-2 border-yellow-400"
+                  : "text-white hover:text-gray-300"
+                  }`}
+              >
+                Our Services
               </Link>
 
-              <Link to="/about" className="text-white hover:text-gray-300 transition font-semibold">
+              <Link
+                to="/about"
+                className={`font-semibold transition pb-2 ${location.pathname === "/about"
+                  ? "text-yellow-400 border-b-2 border-yellow-400"
+                  : "text-white hover:text-gray-300"
+                  }`}
+              >
                 About Us
               </Link>
+
+
+
+              
+
+              {user && (
+                <>
+                  <Link
+                    to="/contact"
+                    className={`font-semibold transition pb-2 ${location.pathname === "/contact"
+                      ? "text-yellow-400 border-b-2 border-yellow-400"
+                      : "text-white hover:text-gray-300"
+                      }`}
+                  >
+                    Contact
+                  </Link>
+
+                  <Link
+                    to="/dashboard"
+                    className={`font-semibold transition pb-2 ${location.pathname === "/dashboard"
+                      ? "text-yellow-400 border-b-2 border-yellow-400"
+                      : "text-white hover:text-gray-300"
+                      }`}
+                  >
+                    Dashboard
+                  </Link>
+                </>
+              )}
             </div>
+
+
 
 
             <div className="flex items-center gap-4">
@@ -86,7 +136,7 @@ const Navbar = () => {
                 </div>
 
                 {isOpen && (
-                  <div className="absolute rounded-xl shadow-md w-[40vw] md:w-[10vw] bg-red-950 dark:bg-gray-800 overflow-hidden right-0 top-12 text-sm">
+                  <div className="absolute rounded-xl shadow-md w-[40vw] md:w-[10vw] bg-blue-900 dark:bg-gray-800 overflow-hidden right-0 top-12 text-sm">
                     <div className="flex flex-col cursor-pointer">
                       {user ? (
                         <>

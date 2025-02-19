@@ -9,7 +9,7 @@ const Statistics = () => {
   if(role === 'customer') return <Navigate to='/dashboard/MyParcels'></Navigate>
   if(role === 'deliveryMan') return <Navigate to='/dashboard/myDelivery'></Navigate>
   return (
-    <div>
+    <div className='dark:bg-gray-900 dark:text-white'>
       <Helmet>
         <title>Dashboard</title>
       </Helmet>

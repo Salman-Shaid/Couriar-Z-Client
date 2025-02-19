@@ -55,14 +55,14 @@ const ManageUsers = () => {
         <Helmet>
           <title>All Customers</title>
         </Helmet>
-        <h1 className="text-3xl font-bold py-8 text-center text-indigo-600 bg-red-200">
-          Total Customers ( {filteredUsers.length} )
+        <h1 className="text-4xl font-bold py-8 text-center text-white bg-blue-900 dark:bg-gray-500 dark:text-white">
+          Total Customers [ {filteredUsers.length} ]
         </h1>
         <div className="pb-8">
           <div className="overflow-x-auto">
             <div className="min-w-full shadow-lg rounded-lg border border-gray-200">
               <table className="min-w-full bg-white text-gray-700">
-                <thead className="bg-indigo-600 text-white">
+                <thead className="bg-blue-900 dark:bg-gray-900 dark:text-white text-white">
                   <tr>
                     <th className="px-5 py-3 text-left text-sm font-semibold uppercase">Name</th>
                     <th className="px-4 py-3 text-left text-sm font-semibold uppercase">Email</th>
@@ -72,7 +72,7 @@ const ManageUsers = () => {
                     <th className="px-5 py-3 text-left text-sm font-semibold uppercase">Action</th>
                   </tr>
                 </thead>
-                <tbody>
+                <tbody className='dark:bg-gray-900 dark:text-white'>
                   {currentUsers.map((userData) => (
                     <UserDataRow refetch={refetch} key={userData?._id} userData={userData} />
                   ))}
@@ -90,7 +90,7 @@ const ManageUsers = () => {
                 className={`pr-2 rounded-lg flex items-center border text-sm font-medium ${
                   currentPage === 1
                     ? 'bg-gray-300 text-gray-500 cursor-not-allowed'
-                    : 'bg-white text-indigo-600 border-gray-300 hover:bg-gray-100'
+                    : 'bg-white text-yellow-400 border-gray-300 hover:bg-gray-100'
                 }`}
               >
                 <PiArrowSquareLeftFill size={40} /> Previous
@@ -103,8 +103,8 @@ const ManageUsers = () => {
                   onClick={() => handlePageChange(index + 1)}
                   className={`px-5 py-2 mx-2 rounded-full border text-sm font-medium ${
                     currentPage === index + 1
-                      ? 'bg-indigo-600 text-white'
-                      : 'bg-white text-indigo-600 border-gray-300 hover:bg-gray-100'
+                      ? 'bg-yellow-400 text-white'
+                      : 'bg-white text-yellow-400 border-gray-300 hover:bg-gray-100'
                   }`}
                 >
                   {index + 1}
@@ -118,7 +118,7 @@ const ManageUsers = () => {
                 className={`pl-2 rounded-lg  flex items-center border text-sm font-medium ${
                   currentPage === totalPages
                     ? 'bg-gray-300 text-gray-500 cursor-not-allowed'
-                    : 'bg-white text-indigo-600 border-gray-300 hover:bg-gray-100'
+                    : 'bg-white text-yellow-400 border-gray-300 hover:bg-yellow-400'
                 }`}
               >
                 <span className="px-2">Next</span> <PiArrowSquareRightFill size={40} />

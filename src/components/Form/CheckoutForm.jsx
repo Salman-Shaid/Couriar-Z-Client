@@ -72,7 +72,7 @@ const CheckoutForm = ({ parcelDetails, clientSecret }) => {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-4 p-4 border rounded-md shadow-md">
+    <form onSubmit={handleSubmit} className="dark:bg-gray-900 dark:text-white space-y-4 p-4 border rounded-md shadow-md">
       <CardElement className="p-3 border rounded-md bg-white" />
 
       <button 

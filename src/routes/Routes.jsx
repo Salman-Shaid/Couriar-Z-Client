@@ -28,6 +28,8 @@ import ParcelLocationPage from '../pages/Dashboard/deliveryman/ParcelLocationPag
 import UpdateParcelForm from '../components/Form/UpdateParcelForm'
 import PayParcel from '../pages/Dashboard/Customer/PayParcel'
 import AboutUs from '../pages/About/AboutUs'
+import ContactPage from '../pages/ContactPage/ContactPage'
+import Services from '../pages/Services/Services'
 
 
 export const router = createBrowserRouter([
@@ -43,6 +45,14 @@ export const router = createBrowserRouter([
       {
         path: '/about',
         element: <AboutUs></AboutUs>
+      },
+      {
+        path: '/contact',
+        element: <PrivateRoute><ContactPage></ContactPage></PrivateRoute>
+      }, 
+      {
+        path: '/services',
+        element: <Services></Services>
       },
       
 

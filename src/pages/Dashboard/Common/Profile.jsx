@@ -11,11 +11,11 @@ const Profile = () => {
   if (loading || isLoading) return <LoadingSpinner />
 
   return (
-    <div className='flex justify-center items-center min-h-screen bg-gray-100'>
+    <div className='flex justify-center items-center min-h-screen bg-gray-100 dark:bg-gray-900 dark:text-white'>
       <Helmet>
         <title>Profile</title>
       </Helmet>
-      <div className='bg-white shadow-lg rounded-lg overflow-hidden w-full max-w-2xl'>
+      <div className='bg-white dark:bg-gray-600 dark:text-white shadow-lg rounded-lg overflow-hidden w-full max-w-2xl'>
         <div className='relative'>
           <img
             alt='cover photo'
@@ -32,26 +32,26 @@ const Profile = () => {
           </div>
         </div>
         <div className='text-center mt-6 p-6'>
-          <p className='text-sm btn bg-green-500 rounded-full text-white mb-1'>{role}</p>
-          <h2 className='text-xl font-semibold text-gray-800'>{user.displayName}</h2>
-          <p className='text-gray-600'>{user.email}</p>
-          <p className='text-gray-400 text-sm mt-2'>User ID: {user.uid}</p>
+          <p className='text-sm btn  bg-yellow-500 rounded-full text-black mb-1'>{role}</p>
+          <h2 className='text-xl font-semibold text-gray-800 dark:text-white'>{user.displayName}</h2>
+          <p className='text-gray-800 dark:text-white'>{user.email}</p>
+          <p className='text-gray-800 dark:text-white text-sm mt-2'>User ID: {user.uid}</p>
           <div className='flex justify-center mt-6'>
-            <button className='bg-lime-500 text-white px-6 py-2 rounded-md shadow-md hover:bg-lime-600'>
+            <button className='bg-yellow-400 text-white px-6 py-2 rounded-md shadow-md hover:bg-yellow-600'>
               Update Profile
             </button>
           </div>
         </div>
         <div className='border-t border-gray-200 p-4'>
-          <h3 className='text-gray-700 font-medium mb-2'>Additional Details</h3>
+          <h3 className='text-gray-700 dark:text-white font-medium mb-2'>Additional Details</h3>
           <div className='flex justify-between items-center text-sm'>
             <div>
-              <p className='text-gray-500'>Role :</p>
-              <p className='text-gray-800 font-medium'>{role}</p>
+              <p className='text-gray-500 dark:text-white'>Role :</p>
+              <p className='text-gray-800 dark:text-white font-medium'>{role}</p>
             </div>
             <div>
-              <p className='text-gray-500'>Phone :</p>
-              <p className='text-gray-800 font-medium'>Not provided</p>
+              <p className='text-gray-500 dark:text-white'>Phone :</p>
+              <p className='text-gray-800 dark:text-white font-medium'>Not provided</p>
             </div>
           </div>
         </div>

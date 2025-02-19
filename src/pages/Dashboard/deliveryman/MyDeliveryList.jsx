@@ -99,13 +99,13 @@ const MyDeliveryList = () => {
 
     return (
         <div className="container mx-auto px-4 py-6">
-            <h2 className="text-xl sm:text-2xl font-semibold mb-6">My Delivery List</h2>
-            <h4 className="mb-4 text-sm text-gray-600">Delivery Man Email: {user.email}</h4>
+            <h2 className="text-xl sm:text-2xl font-semibold mb-3">My Delivery List</h2>
+            <h4 className="mb-4 text-sm text-gray-600">Your Email : {user.email}</h4>
 
-            <div className="overflow-x-auto">
+            <div className="overflow-x-auto mt-10">
                 <table className="table-auto w-full border-collapse border border-gray-200">
                     <thead>
-                        <tr className="bg-gray-200">
+                        <tr className="bg-gray-700">
                             <th className="px-2 md:px-4 py-2 border text-xs md:text-sm">Booked User’s Name</th>
                             <th className="px-2 md:px-4 py-2 border text-xs md:text-sm">Receiver’s Name</th>
                             <th className="px-2 md:px-4 py-2 border text-xs md:text-sm">Booked User’s Phone</th>

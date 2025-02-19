@@ -9,169 +9,102 @@ import { RiUserSearchLine } from "react-icons/ri";
 
 const AdminStatistics = () => {
   const axiosSecure = useAxiosSecure();
-  // Sample data for the charts
-  const { data:statData, isLoading } = useQuery({
+
+  const { data: statData, isLoading } = useQuery({
     queryKey: ['admin-stats'],
     queryFn: async () => {
-      const {data } = await axiosSecure('/admin-stat')
-      return data
+      const { data } = await axiosSecure('/admin-stat');
+      return data;
     },
+  });
 
-  })
-  const {totalBookings ,totalUsers, totalReviews} = statData || {};
-  console.log(statData)
-  
+  const { totalBookings, totalUsers, totalReviews, totalPayment } = statData || {};
 
-  if (isLoading) return <LoadingSpinner></LoadingSpinner>
-  const salesData = {
+  if (isLoading) return <LoadingSpinner />;
+
+  // Bar Chart: Revenue & Bookings Over Time
+  const revenueChart = {
     series: [
       {
-        name: 'bookings',
-        data: [30, 40, 35, 50, 49, 60, 70], // Example sales data
+        name: 'Total Revenue ($)',
+        data: [1000, 2500, 3500, 4500, 5200, 6000, totalPayment || 0], // Example revenue data
+      },
+      {
+        name: 'Total Bookings',
+        data: [5, 15, 25, 40, 55, 70, totalBookings || 0], // Example bookings data
       },
     ],
     options: {
-      chart: {
-        type: 'bar',
-        height: 350,
-      },
-      plotOptions: {
-        bar: {
-          borderRadius: 4,
-          horizontal: false,
-        },
-      },
-      xaxis: {
-        categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul'], // Months
-      },
-      title: {
-        text: 'Sales Data',
-        align: 'center',
-      },
+      chart: { type: 'bar', height: 350 },
+      plotOptions: { bar: { borderRadius: 5, horizontal: false } },
+      xaxis: { categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul'] },
+      title: { text: 'Revenue & Bookings Over Time', align: 'center' },
     },
   };
 
-  const usageData = {
+  // Line Chart: User & Review Growth
+  const growthChart = {
     series: [
       {
-        name: 'App Usage',
-        data: [10, 15, 25, 30, 40, 55, 60], // Example usage data
+        name: 'Total Users',
+        data: [10, 25, 40, 60, 80, 100, totalUsers || 0], // Example users data
+      },
+      {
+        name: 'Total Reviews',
+        data: [2, 10, 20, 35, 50, 65, totalReviews || 0], // Example reviews data
       },
     ],
     options: {
-      chart: {
-        type: 'line',
-        height: 350,
-      },
-      stroke: {
-        width: 3,
-        curve: 'smooth',
-      },
-      xaxis: {
-        categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul'], // Months
-      },
-      title: {
-        text: 'App Usage',
-        align: 'center',
-      },
+      chart: { type: 'line', height: 350 },
+      stroke: { width: 3, curve: 'smooth' },
+      xaxis: { categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul'] },
+      title: { text: 'User & Review Growth', align: 'center' },
     },
   };
 
   return (
-    <div>
-      <div className='mt-12 '>
-        {/* Small Cards */}
-        <div className='mb-12 grid gap-y-10 gap-x-6 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 flex-grow'>
-          {/* Sales Card */}
-          <div className='bg-blue-400 relative flex flex-col bg-clip-border rounded-xl  text-white shadow-md'>
-            <div
-              className={``}
-            >
-              <FaDollarSign className='w-10 h-10 text-white mx-auto mt-4' />
-            </div>
-            <div className='p-4 text-center'>
-              <p className='block antialiased font-sans text-2xl leading-normal font-normal text-blue-gray-600'>
-                Total Revenue
-              </p>
-              <h4 className='block antialiased tracking-normal font-sans text-2xl font-semibold leading-snug text-blue-gray-900'>
-                $120
-              </h4>
-            </div>
-          </div>
-          {/* Total Orders */}
-          <div className='bg-blue-400 text-white relative flex flex-col bg-clip-border rounded-xl  shadow-md'>
-            <div
-              
-            >
-              <TbBrandBooking className='mt-2 mx-auto w-12 h-12 text-white' />
-            </div>
-            <div className='p-4 text-center'>
-              <p className='block antialiased font-sans text-2xl leading-normal font-normal text-blue-gray-600'>
-                Total Bookings
-              </p>
-              <h4 className='block antialiased tracking-normal font-sans text-2xl font-semibold leading-snug text-blue-gray-900'>
-                {totalBookings}
-              </h4>
-            </div>
-          </div>
-          {/* Total Plants */}
-          <div className='bg-blue-400 text-white relative flex flex-col bg-clip-border rounded-xl   shadow-md'>
-            <div
-              className={``}
-            >
-              <VscCodeReview className='w-12 h-12 text-white mx-auto mt-4' />
-            </div>
-            <div className='p-4 text-center'>
-              <p className='block antialiased font-sans  leading-normal font-normal text-blue-gray-600 text-2xl'>
-                Total Reviews
-              </p>
-              <h4 className='block antialiased tracking-normal font-sans text-2xl font-semibold leading-snug text-blue-gray-900'>
-                {totalReviews}
-              </h4>
-            </div>
-          </div>
-          {/* Users Card */}
-          <div className='bg-blue-400 text-white relative flex flex-col bg-clip-border rounded-xl  shadow-md'>
-            <div
-              className={``}
-            >
-              <RiUserSearchLine className='w-12 h-12 text-white mx-auto mt-4' />
-            </div>
-            <div className='p-4 text-center'>
-              <p className='block antialiased font-sans  leading-normal font-normal text-blue-gray-600 text-2xl'>
-                Total User
-              </p>
-              <h4 className='block antialiased tracking-normal font-sans text-2xl font-semibold leading-snug text-blue-gray-900'>
-              {totalUsers}
-              </h4>
-            </div>
-          </div>
+    <div className="mt-16 ">
+      {/* Stat Cards */}
+      <div className="mb-12 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+        {/* Total Revenue */}
+        <div className="bg-blue-500 dark:bg-gray-800 text-white p-6 rounded-xl shadow-md flex flex-col items-center">
+          <FaDollarSign className="w-12 h-12 mb-2" />
+          <p className="text-lg">Total Revenue</p>
+          <h4 className="text-2xl font-semibold">${totalPayment || 0}</h4>
         </div>
 
-        <div className='mb-4 grid grid-cols-1 gap-6 lg:grid-cols-2 xl:grid-cols-3'>
-          {/* Sales Bar Chart */}
-          <div className='relative flex flex-col bg-clip-border rounded-xl bg-white text-gray-700 shadow-md overflow-hidden xl:col-span-2'>
-            <ApexCharts
-              options={salesData.options}
-              series={salesData.series}
-              type="bar"
-              height={350}
-            />
-          </div>
-         
-          
+        {/* Total Bookings */}
+        <div className="bg-green-500 dark:bg-gray-800 text-white p-6 rounded-xl shadow-md flex flex-col items-center">
+          <TbBrandBooking className="w-12 h-12 mb-2" />
+          <p className="text-lg">Total Bookings</p>
+          <h4 className="text-2xl font-semibold">{totalBookings}</h4>
         </div>
 
-        {/* Usage Line Chart */}
-        <div className='mb-4 grid grid-cols-1 gap-6 lg:grid-cols-2 xl:grid-cols-3'>
-          <div className='relative flex flex-col bg-clip-border rounded-xl bg-white text-gray-700 shadow-md overflow-hidden'>
-            <ApexCharts
-              options={usageData.options}
-              series={usageData.series}
-              type="line"
-              height={350}
-            />
-          </div>
+        {/* Total Reviews */}
+        <div className="bg-purple-500 dark:bg-gray-800 text-white p-6 rounded-xl shadow-md flex flex-col items-center">
+          <VscCodeReview className="w-12 h-12 mb-2" />
+          <p className="text-lg">Total Reviews</p>
+          <h4 className="text-2xl font-semibold">{totalReviews}</h4>
+        </div>
+
+        {/* Total Users */}
+        <div className="dark:bg-gray-800 bg-orange-500 text-white p-6 rounded-xl shadow-md flex flex-col items-center">
+          <RiUserSearchLine className="w-12 h-12 mb-2" />
+          <p className="text-lg">Total Users</p>
+          <h4 className="text-2xl font-semibold">{totalUsers}</h4>
+        </div>
+      </div>
+
+      {/* Charts Section */}
+      <div className="grid gap-6 lg:grid-cols-2 mt-20">
+        {/* Revenue & Bookings Chart */}
+        <div className="bg-white dark:bg-gray-500  p-6 rounded-xl shadow-md">
+          <ApexCharts options={revenueChart.options} series={revenueChart.series} type="bar" height={350} />
+        </div>
+
+        {/* User & Review Growth Chart */}
+        <div className="bg-white dark:bg-gray-500  p-6 rounded-xl shadow-md">
+          <ApexCharts options={growthChart.options} series={growthChart.series} type="line" height={350} />
         </div>
       </div>
     </div>

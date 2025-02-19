@@ -11,7 +11,7 @@ import { Fragment } from 'react';
 const BecomeSellerModal = ({ closeModal, isOpen, requestHandle }) => {
   return (
     <Transition appear show={isOpen} as={Fragment}>
-      <Dialog as='div' className='relative z-10' onClose={closeModal}>
+      <Dialog as='div' className='relative z-10 ' onClose={closeModal}>
         <TransitionChild
           as={Fragment}
           enter='ease-out duration-300'
@@ -24,8 +24,8 @@ const BecomeSellerModal = ({ closeModal, isOpen, requestHandle }) => {
           <div className='fixed inset-0 bg-black bg-opacity-25 backdrop-blur-sm' />
         </TransitionChild>
 
-        <div className='fixed inset-0 overflow-y-auto'>
-          <div className='flex min-h-full items-center justify-center p-4 text-center'>
+        <div className='fixed inset-0 overflow-y-auto '>
+          <div className='flex min-h-full items-center justify-center p-4 text-center '>
             <TransitionChild
               as={Fragment}
               enter='ease-out duration-300'
@@ -35,7 +35,7 @@ const BecomeSellerModal = ({ closeModal, isOpen, requestHandle }) => {
               leaveFrom='opacity-100 scale-100'
               leaveTo='opacity-0 scale-95'
             >
-              <DialogPanel className='w-full max-w-md transform overflow-hidden rounded-lg bg-white p-8 text-left align-middle shadow-xl transition-all'>
+              <DialogPanel className='w-full max-w-md transform overflow-hidden rounded-lg bg-gray-200  p-8 text-left align-middle shadow-xl transition-all'>
                 <DialogTitle
                   as='h3'
                   className='text-2xl font-semibold text-center text-gray-900'
@@ -48,7 +48,7 @@ const BecomeSellerModal = ({ closeModal, isOpen, requestHandle }) => {
                   </p>
                 </div>
                 <hr className='my-6 border-gray-200' />
-                <div className='flex justify-around space-x-4'>
+                <div className='flex justify-around space-x-4 '>
                   <button
                     type='button'
                     onClick={requestHandle}
@@ -58,7 +58,7 @@ const BecomeSellerModal = ({ closeModal, isOpen, requestHandle }) => {
                   </button>
                   <button
                     type='button'
-                    className='inline-flex justify-center items-center rounded-md bg-gray-100 px-6 py-2 text-sm font-medium text-gray-700 hover:bg-gray-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-gray-500 focus-visible:ring-offset-2 transition-colors'
+                    className='inline-flex justify-center items-center rounded-md bg-gray-100 px-6 py-2 text-sm font-medium text-gray-700  hover:bg-gray-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-gray-500 focus-visible:ring-offset-2 transition-colors'
                     onClick={closeModal}
                   >
                     Cancel
