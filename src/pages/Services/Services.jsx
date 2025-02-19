@@ -42,7 +42,7 @@ const Services = () => {
                         <p className=" mt-2">Global delivery with real-time tracking and customs clearance.</p>
                     </div>
 
-                    {/* Package Tracking */}
+                  
                     <div className="p-6 shadow-lg rounded-lg bg-white text-center border border-gray-200 hover:shadow-xl transition dark:bg-gray-600 dark:text-white">
                         <FaMapMarkedAlt className="text-yellow-500 text-4xl mx-auto mb-3" />
                         <h2 className="text-xl font-bold ">Live Package Tracking</h2>
@@ -90,7 +90,7 @@ const Services = () => {
                             <p className="text-sm mt-2">Use our tracking system to monitor your package in real time.</p>
                         </div>
 
-                        {/* Step 4: Fast & Secure Delivery */}
+                      
                         <div className="p-6 shadow-lg rounded-lg bg-gray-100 dark:bg-gray-600 hover:shadow-xl transition">
                             <FaShippingFast className="text-blue-700 dark:text-yellow-400 text-5xl mx-auto mb-3" />
                             <h3 className="text-xl font-semibold">4. Delivery at Your Door</h3>
@@ -100,7 +100,6 @@ const Services = () => {
                 </div>
 
 
-                {/* Why Choose Us? */}
                 <div className="mt-16 p-8 bg-gray-100 dark:bg-gray-600 dark:text-white text-black rounded-lg text-center">
                     <h2 className="text-3xl font-bold  mb-4">Why Choose Courier-Z?</h2>
                     <div className="grid md:grid-cols-3 gap-6">
@@ -119,7 +118,7 @@ const Services = () => {
                     </div>
                 </div>
 
-                {/* Contact Section */}
+           
                 <div className="mt-16 text-center">
                     <h2 className="text-3xl font-bold text-blue-900 mb-4">Need Assistance?</h2>
                     <p className="text-lg text-gray-600">
