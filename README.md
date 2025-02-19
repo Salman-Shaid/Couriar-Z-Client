@@ -1,7 +1,7 @@
 **# Parcel Management System - Client Side**
 
 ## Live Site URL
-[Live Website](https://your-live-site-link.com](https://assignment12-fe277.web.app/)
+Live Website : https://assignment12-fe277.web.app/
 
 ## Overview
 The Parcel Management System is a MERN stack application where users can book parcels for delivery, admins can assign delivery personnel, and delivery men can manage deliveries. This repository contains the frontend (React.js) implementation.
